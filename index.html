@@ -113,29 +113,48 @@ document.addEventListener('click', () => {
           </p>
       </div>
       <script>
-        document.addEventListener('DOMContentLoaded', function() {
+         document.addEventListener('DOMContentLoaded', function() {
     var aboutLink = document.getElementById('aboutLink');
     var popup = document.getElementById('aboutPopup');
     var closeBtn = document.querySelector('.close-btn');
 
+    function animatePopup() {
+      const fadeEls = document.querySelectorAll('.profile-pic');
+      gsap.from(fadeEls, {
+        duration: 2,
+        scale: .2,
+        ease: "back.out(1.7)",
+        opacity: 0,
+      });
+
+      const fadeElsText = document.querySelectorAll('.prottx');
+      gsap.from(fadeElsText, {
+        duration: 2,
+        scale: .2,
+        ease: "circ.out",
+        y: -250
+      });
+    }
+
     // Open popup when the "About" link is clicked
     aboutLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        popup.style.display = 'block';
+      event.preventDefault();
+      popup.style.display = 'block';
+      animatePopup();
     });
 
     // Close popup when the close button is clicked
     closeBtn.addEventListener('click', function() {
-        popup.style.display = 'none';
+      popup.style.display = 'none';
     });
 
     // Close popup when clicking outside of the popup content
     window.addEventListener('click', function(event) {
-        if (event.target === popup) {
-            popup.style.display = 'none';
-        }
+      if (event.target === popup) {
+        popup.style.display = 'none';
+      }
     });
-});
+  });
       </script>
   </div>
 
