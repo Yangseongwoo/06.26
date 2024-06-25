@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.cdnfonts.com/css/druk-trial" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- FancyBox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- FancyBox JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
+
+<body>
+  <button id="scrollToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+      // Show the button with fade in effect when scrolled down 2000px from the top
+      window.onscroll = function() {
+          if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+              scrollToTopBtn.classList.add('show');
+          } else {
+              scrollToTopBtn.classList.remove('show');
+          }
+      };
+
+      // Scroll to the top of the document when the button is clicked
+      scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
+  });
+  </script>
+  
+  <div class="cursor"></div>
+<script>
+    const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+    cursor.classList.add("expand");
+
+    setTimeout(() => {
+        cursor.classList.remove("expand");
+    }, 500)
+})
+</script>
+
+    <div data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500" class="nav_wrap">
+      <nav>
+        <a href="index.html"><img src="image/logo.png" alt="" class="logo"></a>
+        <div class="nav_bar">
+        <li><a href="#project">Project</a></li>
+        <li><a href="#" id="aboutLink">About</a></li>
+        <li><a href="#about">skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </div>
+      </nav>
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+  const links = document.querySelectorAll("nav .nav_bar a");
+
+  for (const link of links) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: "smooth"
+      });
+    });
+  }
+});
+      </script>
+    </div>
+
+    <div id="aboutPopup" class="popup">
+      <div class="popup-content">
+          <span class="close-btn">&times;</span>
+          <h2>About Me</h2>
+          <img src="image/profile.png" alt="Profile Picture" class="profile-pic">
+          <p class="prottx">Hello! I am SEONG WOO YANG. Here is some information about me...
+            <br>
+          </p>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var aboutLink = document.getElementById('aboutLink');
+    var popup = document.getElementById('aboutPopup');
+    var closeBtn = document.querySelector('.close-btn');
+
+    // Open popup when the "About" link is clicked
+    aboutLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        popup.style.display = 'block';
+    });
+
+    // Close popup when the close button is clicked
+    closeBtn.addEventListener('click', function() {
+        popup.style.display = 'none';
+    });
+
+    // Close popup when clicking outside of the popup content
+    window.addEventListener('click', function(event) {
+        if (event.target === popup) {
+            popup.style.display = 'none';
+        }
+    });
+});
+      </script>
+  </div>
+
+  <div class="wrapper">
+    <div class="row">
+      <div class="text">
+        <div class="imgWrap i1">
+          <img src="image/post3.png" alt="" class="lanimg" data-hover-src="image/bookcover.jpg">
+        </div>
+        <span>C</span><span>O</span><span>N</span><span>S</span><span>T</span><span>A</span><span>N</span><span>T</span>
+        <div class="imgWrap i2">
+          <img src="image/Rectangle 3402.png" alt="" class="lanimg" data-hover-src="image/gallary12.jpg">
+        </div>
+      </div>
+    </div>
+    <hr class="hr1">
+    <div class="row">
+      <div class="text">
+        <span>D</span><span>I</span><span>G</span><span>I</span><span>T</span><span>A</span><span>L</span>
+        <div class="imgWrap center">
+          <img src="image/Rectangle 3403.png" alt="" class="lanimg" data-hover-src="image/DIRECTOR'S TREATMENT _ SONY.jpg">
+        </div>
+        <span>D</span><span>E</span><span>S</span><span>I</span><span>G</span><span>N</span>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="text">
+        <div class="imgWrap i3 small">
+          <img src="image/post1.png" alt="" class="lanimg" data-hover-src="image/gallary9.jpg">
+        </div>
+        <span>C</span><span>H</span><span>A</span><span>L</span><span>L</span><span>E</span><span>N</span><span>G</span><span>I</span><span>N</span><span>G</span>
+        <div class="imgWrap i4 small">
+          <img src="image/post2.png" alt="" class="lanimg" data-hover-src="image/DIRECTOR'S TREATMENT _ SONY.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+
+  
+
+    <div id="project" class="wrapper2">
+        <h4 data-aos="fade-right"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-once="ture" class="works1">MY <br>PROJECT</h4>
+        <div data-aos="fade-up"
+        data-aos-duration="1000"
+        data-aos-delay = "450" data-aos-once="ture" class="container1">
+            <input type="radio" name="slide" id="c1" checked>
+            <label for="c1" class="card2">
+                <div class="row2">
+                    <div class="icon">1</div>
+                    <div class="description">
+                        <h4>website redesign</h4>
+                        <p>Redesing the ETUDE website</p>
+                    </div>
+                </div>
+            </label>
+            <input type="radio" name="slide" id="c2" >
+            <label for="c2" class="card2">
+                <div class="row2">
+                    <div class="icon">2</div>
+                    <div class="description">
+                        <h4>Video</h4>
+                        <p>Gets better every day -
+                         stay tuned</p>
+                    </div>
+                </div>
+            </label>
+            <input type="radio" name="slide" id="c3" >
+            <label for="c3" class="card2">
+                <div class="row2">
+                    <div class="icon">3</div>
+                    <div class="description">
+                        <h4>Globalization</h4>
+                        <p>Help people all over the world</p>
+                    </div>
+                </div>
+            </label>
+            <input type="radio" name="slide" id="c4" >
+            <label for="c4" class="card2">
+                <div class="row2">
+                    <div class="icon">4</div>
+                    <div class="description">
+                        <h4>New technologies</h4>
+                        <p>Space engineering becomes
+                         more and more advanced</p>
+                    </div>
+                </div>
+            </label>
+            <script src="js/index3.js"></script>
+        </div>
+          <script></script>
+    </div>
+
+    <div id="about" class="last">
+        <div class="last_wrap">
+            <h4 data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-easing="ease-in-sine" data-aos-duration="1000" data-aos-once="ture" class="contact">EXPERIENCE</h4>
+            <section class="hero-section">
+                <div class="card1-grid">
+                  <a data-aos="fade-up"
+                  data-aos-duration="500"
+                  data-aos-delay="500" class="card1" href="#">
+                    <div class="card1__background" style="background-image: url(image/다운로드\ \(8\).jpg)"></div>
+                    <div class="card1__content">
+                      <p class="card1__category">POSTER</p>
+                      <h3 class="card1__heading">PHOTOSHOP</h3>
+                    </div>
+                  </a>
+                  <a data-aos="fade-up"
+                  data-aos-duration="500"
+                  data-aos-delay="800" data-aos-once="ture" class="card1" href="#">
+                    <div class="card1__background" style="background-image: url(image/AdobePremierePro.jpg)"></div>
+                    <div class="card1__content">
+                      <p class="card1__category">EDITING</p>
+                      <h3 class="card1__heading">PREMIER PRO</h3>
+                    </div>
+                  </a>
+                  <a data-aos="fade-up"
+                  data-aos-duration="500"
+                  data-aos-delay="1100" data-aos-once="ture" class="card1" href="#">
+                    <div class="card1__background" style="background-image: url(image/FIGMA.jpg)"></div>
+                    <div class="card1__content">
+                      <p class="card1__category">DESIGN</p>
+                      <h3 class="card1__heading">FIGMA</h3>
+                    </div>
+                  </li>
+                  <a data-aos="fade-up"
+                  data-aos-duration="500"
+                  data-aos-delay="1400" data-aos-once="ture" class="card1" href="#">
+                    <div class="card1__background" style="background-image: url(image/Bot\ Verification.jpg)"></div>
+                    <div class="card1__content">
+                      <p class="card1__category">WEBSITE</p>
+                      <h3 class="card1__heading">VISUALSTUDIO CODE</h3>
+                    </div>
+                  </a>
+                <div>
+              </section>
+        </div>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            gsap.to(".person", {
+              y: "-=20", // 위로 20px 이동
+              duration: 2, // 2초 동안 애니메이션
+              ease: "power1.inOut",
+              repeat: -1, // 무한 반복
+              yoyo: true // 다시 원래 위치로 돌아옴
+            });
+
+            gsap.to(".person1", {
+              y: "-=20", // 위로 20px 이동
+              duration: 2, // 2초 동안 애니메이션
+              ease: "power1.inOut",
+              repeat: -1, // 무한 반복
+              yoyo: true // 다시 원래 위치로 돌아옴
+            });
+          });
+          
+        </script>
+    </div>
+    
+<div data-aos="fade-right"
+data-aos-offset="300"
+data-aos-easing="ease-in-sine" data-aos-duration="1000"class="wrok_wrap2">
+    <h2 class="workttx">MY WORKS</h2>
+    <img src="image/work3d.png" alt="" class="person1">
+  </div>
+    <div class="grid_container">
+      <div class="grid_wrap">
+        <div class="card3 card3_large card_position1">
+          <img src="image/life is sweet 2.jpg" alt="">
+          <p>Life is sweet</p> 
+        </div>
+    
+        <div data-aos="fade-up" class="card3 card3_large card_position2">
+          <img data-aos="fade-up"
+          data-aos-duration="2000" data-aos-once="ture" src="image/pexels-edgar-hernandez-783944.jpg" alt="">
+          <p data-aos="fade-up"
+          data-aos-duration="2500" data-aos-once="ture">sky photohraph</p>
+        </div>
+    
+        <div class="card3 card_position3">
+          <img data-aos="fade-up"
+          data-aos-duration="2000" data-aos-once="ture" src="image/poster.jpg" alt="">
+          <p data-aos="fade-up"
+          data-aos-duration="2500" data-aos-once="ture">poster_justdoit</p>
+        </div>
+    
+        <div class="card3 card_position4">
+          <img data-aos="fade-up"
+          data-aos-duration="2000" data-aos-once="ture" src="image/아트 포스터 2 완성본 1.png" alt="">
+          <p data-aos="fade-up"
+          data-aos-duration="2500" data-aos-once="ture">post_newwork</p>
+        </div>
+    
+        <div class="card3 card_position5">
+          <img data-aos="fade-up"
+          data-aos-duration="2000" data-aos-once="ture" src="image/P1330833.jpg" alt="">
+          <p data-aos="fade-up"
+          data-aos-duration="2500" data-aos-once="ture">photohraph</p>
+        </div>
+    
+        <div class="card3 card_position6">
+          <img data-aos="fade-up"
+          data-aos-duration="2000" data-aos-once="ture" src="image/Weekly Inspiration Dose.jpg" alt="">
+          <p data-aos="fade-up"
+          data-aos-duration="2500" data-aos-once="ture">joker_poster</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div data-aos="fade-right"
+    data-aos-offset="300"
+    data-aos-easing="ease-in-sine" data-aos-duration="1000" class="title">
+      <h1><span></span>PHOTO GALLERY</h1>
+      <img src="image/person1.png" alt="" class="person">
+    </div>
+    
+    <!--Carousel Gallery-->
+    <div class="carousel-gallery">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="image/gallary1.jpg" data-fancybox="gallery">
+                        <div class="image" style="background-image: url(image/gallary1.jpg)">
+                            <div class="overlay">
+                                <em class="mdi mdi-magnify-plus"></em>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="image/gallary2.jpg" data-fancybox="gallery">
+                        <div class="image" style="background-image: url(image/gallary2.jpg)">
+                            <div class="overlay">
+                                <em class="mdi mdi-magnify-plus"></em>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="image/gallary3.jpg" data-fancybox="gallery">
+                        <div class="image" style="background-image: url(image/gallary3.jpg)">
+                            <div class="overlay">
+                                <em class="mdi mdi-magnify-plus"></em>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="image/gallary4.jpg" data-fancybox="gallery">
+                        <div class="image" style="background-image: url(image/gallary4.jpg)">
+                            <div class="overlay">
+                                <em class="mdi mdi-magnify-plus"></em>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="image/gallery11.jpg" data-fancybox="gallery">
+                        <div class="image" style="background-image: url(image/gallery11.jpg)">
+                            <div class="overlay">
+                                <em class="mdi mdi-magnify-plus"></em>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="image/gallery12.JPG" data-fancybox="gallery">
+                        <div class="image" style="background-image: url(image/gallery12.JPG)">
+                            <div class="overlay">
+                                <em class="mdi mdi-magnify-plus"></em>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <script src="js/swiper2.js"></script>
+    </div>
+
+  
+    
+    <a id="yt-link" class="meta-link" href="https://www.youtube.com/@ajr" target="_blank">
+      <i class="uil uil-youtube"></i>
+      <span>youtube</span>
+    </a>
+    
+    <a id="insta-link" class="meta-link" href="https://www.instagram.com/s.w_nf/" target="_blank">
+      <i class="uil uil-instagram-alt"></i>
+      <span>Instagram</span>
+    </a>
+    <script src="js/swiper2.js"></script>
+
+
+
+
+    <div id="contact" class="text_container">
+      <h1 class="text2">CONTACT<span class="span2">010-1234-5678</span></h1>
+      <h1 class="text2">WITH<span class="span2"></span></h1>
+      <h1 class="text2">ME<span class="span2">ysofun0907@hanmail.net</span></h1>
+      <script src="js/index2.js"></script>
+    </div>
+    
+
+    <div class="footer_container">
+    <footer class="footer">
+      <div class="contact-info">
+<!--           <p class="number">CONTACT : 010-1234-5678</p>
+          <p>EMAIL : ysofun0907@hanmail.net</a></p> -->
+      </div>
+      <p class="copy">&copy; 2024 SEONG WOO YANG. All rights reserved.</p>
+  </footer>
+</div>
+
+    <script>
+        AOS.init({
+          once: true
+        });
+
+        
+      </script>
+      
+      <script src="js/index.js"></script>
+</body>
+</html>

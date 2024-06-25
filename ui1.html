@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ui1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+      // Show the button with fade in effect when scrolled down 2000px from the top
+      window.onscroll = function() {
+          if (document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000) {
+              scrollToTopBtn.classList.add('show');
+          } else {
+              scrollToTopBtn.classList.remove('show');
+          }
+      };
+
+      // Scroll to the top of the document when the button is clicked
+      scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+      });
+  });
+  </script>
+
+    <div class="container">
+        <div class="siteimg">
+            <img class="site" src="image/web2-1.png" alt="">
+            </div>
+        <div class="wrap">
+            <div class="ttx">
+                
+    <h2 class="title">ETUDE</h2>
+    <div class="ttx2">
+        <h1 class="subttx1">WEBSITE REDESIGN</h1>
+        <h1 class="subttx">BRANDING</h1>
+    </div>
+    <div class="backgroud">
+    <h1 class="ttx1">velit facilis et beatae beatae! <br>
+        Aut dignissimos voluptas est  <br>
+        quisquam ipsum et porro omnis ut <br>
+        facere cupiditate. Qui molestiae o.</h1>
+    </div>
+            </div>
+            <a href="index.html"><button class="close-btn"><i class="fa-solid fa-xmark"></i></button></a>
+        </div>
+    </div>
+</body>
+</html>
